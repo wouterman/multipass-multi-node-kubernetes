@@ -1,3 +1,5 @@
+CALL cleanup.bat
+
 multipass launch --name master --memory 2G --cpus 2 --disk 10G 20.04
 multipass transfer initialize-master.sh master:.
 multipass transfer reset-master.sh master:.
@@ -15,4 +17,4 @@ SET kube_join_command=%%F
 
 multipass exec worker -- sudo %kube_join_command%
 
-multipass restart master worker
+multipass shell master

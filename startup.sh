@@ -1,3 +1,5 @@
+./cleanup.bat
+
 multipass launch --name master --memory 2G --cpus 2 --disk 10G 20.04
 multipass transfer initialize-master.sh master:.
 multipass exec master -- chmod 755 initialize-master.sh
